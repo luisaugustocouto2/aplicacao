@@ -1,0 +1,15 @@
+name: Manter Projeto Ativo
+
+on:
+  schedule:
+    # Define a frequência usando sintaxe POSIX cron
+    # Este exemplo roda toda segunda-feira às 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Permite rodar manualmente para testar
+
+jobs:
+  ping_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Realizar Requisição
+        run: curl -I https://seu-projeto.supabase.co
